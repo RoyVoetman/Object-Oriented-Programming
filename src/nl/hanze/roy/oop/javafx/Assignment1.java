@@ -1,4 +1,4 @@
-package nl.hanze.roy.oop.multithreading;
+package nl.hanze.roy.oop.javafx;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
