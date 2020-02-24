@@ -1,6 +1,7 @@
 package nl.hanze.roy.oop.javafx;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
@@ -11,10 +12,6 @@ public class Assignment1 extends Application {
 
     public static void main(String[] args) {
         launch(args);
-    }
-
-    public static synchronized void appendText(String string) {
-        Assignment1.textArea.appendText(string);
     }
 
     @Override
@@ -66,7 +63,7 @@ class PrintChar implements Runnable {
         for (int i = 0; i < times; i++) {
             String string = String.valueOf(charToPrint);
 
-            Assignment1.appendText(string);
+            Platform.runLater(() -> Assignment1.textArea.appendText(string));
         }
     }
 }
@@ -87,7 +84,8 @@ class PrintNum implements Runnable {
      */
     public void run() {
         for (int i = 1; i <= lastNum; i++) {
-            Assignment1.appendText(" " + i);
+            int finalI = i;
+            Platform.runLater(() -> Assignment1.textArea.appendText(" " + finalI));
         }
     }
 }
