@@ -1,7 +1,6 @@
 package nl.hanze.roy.oop.multithreading;
 
 import java.util.concurrent.*;
-import java.util.concurrent.locks.*;
 
 public class Assignment8 {
     private static Account account = new Account();
