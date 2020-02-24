@@ -3,6 +3,7 @@ package nl.hanze.roy.oop.javafx;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
@@ -55,38 +56,44 @@ class BallPane extends Pane {
     private double x = radius, y = radius;
     private double dx = 1, dy = 1;
     private Circle circle = new Circle(x, y, radius);
-    private Timeline animation;
+
+    private volatile boolean isBouncing = true;
+    private long delay = 50;
 
     public BallPane() {
         circle.setFill(Color.GREEN); // Set ball color
         getChildren().add(circle); // Place a ball into this pane
 
         // Create an animation for moving the ball
-        animation = new Timeline(
-                new KeyFrame(Duration.millis(50), e -> moveBall()));
-        animation.setCycleCount(Timeline.INDEFINITE);
-        animation.play(); // Start animation
+        new Thread(() -> {
+            while(true) {
+                if(!isBouncing) {
+                    continue;
+                }
+
+                Platform.runLater(this::moveBall);
+
+                try {
+                    Thread.sleep(delay);
+                } catch (InterruptedException ignore) {}
+            }
+        }).start();
     }
 
     public void play() {
-        animation.play();
+        isBouncing = true;
     }
 
     public void pause() {
-        animation.pause();
+        isBouncing = false;
     }
 
     public void increaseSpeed() {
-        animation.setRate(animation.getRate() + 0.1);
+        delay = (delay > 1) ? delay - 1 : 1;
     }
 
     public void decreaseSpeed() {
-        animation.setRate(
-                animation.getRate() > 0 ? animation.getRate() - 0.1 : 0);
-    }
-
-    public DoubleProperty rateProperty() {
-        return animation.rateProperty();
+        delay++;
     }
 
     protected void moveBall() {
