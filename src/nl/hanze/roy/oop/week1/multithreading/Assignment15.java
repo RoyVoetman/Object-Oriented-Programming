@@ -1,4 +1,4 @@
-package nl.hanze.roy.oop.multithreading;
+package nl.hanze.roy.oop.week1.multithreading;
 
 import java.util.concurrent.*;
 

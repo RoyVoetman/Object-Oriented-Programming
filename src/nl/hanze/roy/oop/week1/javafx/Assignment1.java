@@ -1,4 +1,4 @@
-package nl.hanze.roy.oop.javafx;
+package nl.hanze.roy.oop.week1.javafx;
 
 import javafx.application.Application;
 import javafx.application.Platform;

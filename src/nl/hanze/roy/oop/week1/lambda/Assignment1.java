@@ -1,4 +1,4 @@
-package nl.hanze.roy.oop.lambda;
+package nl.hanze.roy.oop.week1.lambda;
 
 import java.util.ArrayList;
 import java.util.List;
