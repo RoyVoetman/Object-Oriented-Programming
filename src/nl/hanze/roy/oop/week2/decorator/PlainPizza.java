@@ -1,3 +1,5 @@
+package nl.hanze.roy.oop.week2.decorator;
+
 public class PlainPizza implements Pizza {
  
     public String getDescription() {

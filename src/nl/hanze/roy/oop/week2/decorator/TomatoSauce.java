@@ -1,3 +1,5 @@
+package nl.hanze.roy.oop.week2.decorator;
+
 public class TomatoSauce extends ToppingDecorator {
 
     public TomatoSauce(Pizza newPizza) {
@@ -12,5 +14,15 @@ public class TomatoSauce extends ToppingDecorator {
     public double getCost() {
         System.out.println("Cost of sauce: " + .35);
         return tempPizza.getCost() + .35;
+    }
+
+    @Override
+    public double setSize() {
+        return 0;
+    }
+
+    @Override
+    public double getSize() {
+        return 0;
     }
 }

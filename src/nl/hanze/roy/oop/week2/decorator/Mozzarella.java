@@ -1,3 +1,5 @@
+package nl.hanze.roy.oop.week2.decorator;
+
 public class Mozzarella extends ToppingDecorator {
 
     public Mozzarella(Pizza newPizza) {
