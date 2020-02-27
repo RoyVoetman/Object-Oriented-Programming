@@ -12,10 +12,21 @@ public class Main {
             int r1 = rand.nextInt(4) + 1;
 
             switch (r1) {
-                // your code
+                case 1:
+                    factory = new SedanFactory();
+                    break;
+                case 2:
+                    factory = new StationWagonFactory();
+                    break;
+                case 3:
+                    factory = new PickUpFactory();
+                    break;
+                case 4:
+                    factory = new SUVFactory();
+                    break;
             }
-        
-            // your code
+
+            Car car = factory.makeCar();
             System.out.println("Type of car is " + car + " with price " + car.getCost());
         }
     }

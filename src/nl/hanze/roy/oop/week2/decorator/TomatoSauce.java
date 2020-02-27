@@ -12,17 +12,22 @@ public class TomatoSauce extends ToppingDecorator {
     }
     
     public double getCost() {
-        System.out.println("Cost of sauce: " + .35);
-        return tempPizza.getCost() + .35;
-    }
+        double cost = 0;
 
-    @Override
-    public double setSize() {
-        return 0;
-    }
+        switch (tempPizza.getSize()) {
+            case "S":
+                cost = 0.25;
+                break;
+            case "M":
+                cost = 0.35;
+                break;
+            case "L":
+                cost = 0.45;
+                break;
+        }
 
-    @Override
-    public double getSize() {
-        return 0;
+        System.out.println("Cost of sauce: " + cost);
+
+        return tempPizza.getCost() + cost;
     }
 }
