@@ -38,6 +38,12 @@ University assignments for Object Oriented Programming in Java.
 * Database programming
 * Profiling
 
+## Books
+Introduction to Java Programming: Brief Version, 10th Edition<br>
+by Y. Daniel Liang
+- ISBN-13: 978-0133592207
+- ISBN-10: 0133592200
+
 ## Author
 
 * Roy Voetman
