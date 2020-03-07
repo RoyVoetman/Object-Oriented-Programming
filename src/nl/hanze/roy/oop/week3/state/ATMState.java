@@ -9,8 +9,5 @@ public interface ATMState {
     void insertPin(ATM atm);
 
     void requestAmount(ATM atm);
-
 }
-
-// implement the 5 concrete states
 

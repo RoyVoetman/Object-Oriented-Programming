@@ -1,5 +1,7 @@
 package nl.hanze.roy.oop.week3.state;
 
+import java.util.Scanner;
+
 // the context
 public class ATM
 {
@@ -33,5 +35,22 @@ public class ATM
 
     void requestAmount() {
         state.requestAmount(this);
+    }
+
+    boolean validatePin() {
+        Scanner reader = new Scanner(System.in);
+        System.out.print("\tEnter your PIN code: ");
+        int pin = reader.nextInt();
+
+        return (pin == 1234);
+    }
+
+    boolean withdraw(int amount) {
+        if(amount <= this.amount) {
+            this.amount -= amount;
+            return true;
+        }
+
+        return false;
     }
 }
