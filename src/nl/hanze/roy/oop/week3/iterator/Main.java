@@ -18,9 +18,6 @@ public class Main {
         }
 
         System.out.println("\nFor loop: ");
-        stack.push("kwik");
-        stack.push("kwek");
-        stack.push("kwak");
 
         for(String string : stack) {
             System.out.println(string);
