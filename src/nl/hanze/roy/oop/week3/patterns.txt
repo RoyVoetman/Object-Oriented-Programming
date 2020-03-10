@@ -1,0 +1,13 @@
+Facade => Simplifies the interface of a set of classes
+Observer => Allows objects to be notified when a specific object changes
+Composite => Clients treat collections of objects and individual objects in the same way
+State => Encapsulate varying behavior for the same object based on its internal state and uses delegation to switch between behavior
+Template method => Subclasses decide how to implement steps in an algorithm
+Decorator => Wraps an object to provide new behavior
+Command => Encapsulates all information needed to perform an action or trigger an event at a later time
+Strategy => Defines a family of algorithms, encapsulate each one, and makes them interchangeable
+Iterator => Provides a wat to traverse a collection of objects without exposing its implementation
+Proxy => Wraps an object to control access to it
+Adapter => Wraps an object and provides a different interface 
+Factory => Encapsulates object creation by providing an interface for creating an object without revealing the object's actual class
+Singleton => Ensures one and only one object is created
