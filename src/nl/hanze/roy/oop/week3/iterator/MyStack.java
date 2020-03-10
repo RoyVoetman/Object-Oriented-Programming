@@ -9,7 +9,7 @@ public class MyStack<E> implements Iterable<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return new StackIterator<>(this);
+        return new StackIterator<>(list);
     }
 
     public void push(E item) {

@@ -1,21 +1,23 @@
 package nl.hanze.roy.oop.week3.iterator;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class StackIterator<E> implements Iterator<E> {
-    MyStack<E> stack;
+    ArrayList<E> list;
+    private int index = 0;
 
-    public StackIterator(MyStack<E> stack) {
-        this.stack = stack;
+    public StackIterator(ArrayList<E> list) {
+        this.list = list;
     }
 
     @Override
     public boolean hasNext() {
-        return !this.stack.isEmpty();
+        return index < list.size();
     }
 
     @Override
     public E next() {
-        return this.stack.pop();
+        return list.get(index++);
     }
 }
